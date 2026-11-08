@@ -1,0 +1,25 @@
+{
+  "name": "sistema-facturacion",
+  "version": "1.0.0",
+  "description": "Sistema web de facturación y gestión de ventas desarrollado para apoyar la administración de un emprendimiento dedicado a la comercialización de artículos tecnológicos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronStivens/sistema-facturacion.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AaronStivens/sistema-facturacion/issues"
+  },
+  "homepage": "https://github.com/AaronStivens/sistema-facturacion#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "husky": "^9.1.7"
+  }
+}
