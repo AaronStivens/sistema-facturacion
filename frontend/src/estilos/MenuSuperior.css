@@ -1,0 +1,94 @@
+
+.menu-superior {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+  z-index: 1000;
+}
+
+.menu-opcion {
+  position: relative;
+  height: 70px;
+  min-width: 115px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.menu-opcion:hover {
+  color: #2563eb;
+  background-color: #f1f5f9;
+}
+
+.menu-opcion.activa {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.menu-icono {
+  font-size: 22px;
+  transition: transform 0.25s ease;
+}
+
+.menu-opcion:hover .menu-icono {
+  transform: translateY(-2px);
+}
+
+.menu-opcion.activa .menu-icono {
+  animation: animacion-icono 0.35s ease;
+}
+
+.indicador-activo {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 5px 5px 0 0;
+  transition: width 0.3s ease;
+}
+
+.menu-opcion.activa .indicador-activo {
+  width: 70%;
+}
+
+@keyframes animacion-icono {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .menu-superior {
+    gap: 5px;
+  }
+
+  .menu-opcion {
+    min-width: 0;
+    flex: 1;
+    font-size: 12px;
+  }
+
+  .menu-icono {
+    font-size: 19px;
+  }
+}
