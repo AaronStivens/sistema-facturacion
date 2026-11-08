@@ -8,6 +8,10 @@ El objetivo del proyecto es construir una aplicación que permita centralizar la
 
 Actualmente, el proyecto se encuentra en su etapa inicial de desarrollo, con el frontend y el backend configurados.
 
+## Estructura base de datos (MySQL)
+<img width="1090" height="860" alt="image" src="https://github.com/user-attachments/assets/3dbbc81e-9e77-41f3-bedd-988f9dc2da90" />
+
+
 ## Objetivos
 
 - Desarrollar un sistema de facturación web.
