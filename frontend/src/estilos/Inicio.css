@@ -1,0 +1,42 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.pagina-inicio {
+  min-height: 100vh;
+}
+
+.contenido-principal {
+  padding: 130px 0 40px;
+}
+
+
+.barra-sistema {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 1001;
+}
+
+
+.barra-sistema h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 700;
+}
+
