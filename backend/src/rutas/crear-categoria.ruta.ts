@@ -6,7 +6,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/categorias:
+ * /api/categorias/crear:
  *   post:
  *     summary: Crear una categoría
  *     description: Registra una nueva categoría en el sistema.
@@ -26,6 +26,6 @@ const router = Router();
  *       500:
  *         description: Error interno del servidor.
  */
-router.post("/", crearCategoriaControlador);
+router.post("/crear", crearCategoriaControlador);
 
 export default router;
