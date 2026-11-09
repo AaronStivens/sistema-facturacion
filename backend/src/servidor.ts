@@ -9,6 +9,7 @@ import "reflect-metadata";
 //Rutas
 import crearCategoriaRuta from "./rutas/crear-categoria.ruta";
 import obtenercategoriasRuta from "./rutas/obtener-categoria.ruta";
+import eliminarcategoriaRuta from "./rutas/eliminar-categoria.ruta";
 
 dotenv.config();
 
@@ -48,6 +49,7 @@ app.get("/api/estado-bd", async (_req, res) => {
 //---------------------------------------------------------------
 app.use("/api/categorias", crearCategoriaRuta);
 app.use("/api/categorias", obtenercategoriasRuta);
+app.use("/api/categorias", eliminarcategoriaRuta);
 
 
 // Iniciar servidor
