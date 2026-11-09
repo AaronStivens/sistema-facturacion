@@ -4,6 +4,10 @@ import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import documentacionSwagger from "./configuracion/swagger";
 import conexion from "../base-datos/conexion";
+import "reflect-metadata";
+
+//Rutas
+import crearCategoriaRuta from "./rutas/crear-categoria.ruta";
 
 dotenv.config();
 
@@ -19,7 +23,7 @@ app.use(
   swaggerUi.setup(documentacionSwagger),
 );
 
-// Ruta de prueba
+// Ruta de testeo
 app.get("/api/estado-bd", async (_req, res) => {
   try {
     await conexion.raw("SELECT 1");
@@ -37,6 +41,11 @@ app.get("/api/estado-bd", async (_req, res) => {
     });
   }
 });
+
+//---------------------------------------------------------------
+//Categorias
+//---------------------------------------------------------------
+app.use("/api/crear-categorias", crearCategoriaRuta);
 
 // Iniciar servidor
 app.listen(PUERTO, () => {
