@@ -1,0 +1,54 @@
+
+.inventario {
+  padding: 10px 40px;
+}
+
+.inventario-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.inventario-encabezado h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 26px;
+}
+
+.inventario-encabezado p {
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.inventario-pestanas {
+  display: flex;
+  gap: 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pestana {
+  padding: 12px 5px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #64748b;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pestana:hover {
+  color: #2563eb;
+}
+
+.pestana.activa {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  font-weight: 600;
+}
+
+.inventario-contenido {
+  padding: 25px 5px;
+  color: #1e293b;
+}
