@@ -3,21 +3,16 @@ name: Integracion Continua
 
 on:
   push:
-    branches: [main]
   pull_request:
-    branches: [main]
 
 jobs:
-  verificar-frontend:
-    name: Verificar frontend
+
+  frontend:
+    name: Verificar Frontend
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: frontend
-
     steps:
-      - name: Descargar codigo
+      - name: Descargar repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
@@ -28,21 +23,19 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Instalar dependencias
+        working-directory: frontend
         run: npm ci
 
       - name: Compilar frontend
+        working-directory: frontend
         run: npm run build
 
-  verificar-backend:
-    name: Verificar backend
+  backend:
+    name: Verificar Backend
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: backend
-
     steps:
-      - name: Descargar codigo
+      - name: Descargar repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
@@ -53,7 +46,13 @@ jobs:
           cache-dependency-path: backend/package-lock.json
 
       - name: Instalar dependencias
+        working-directory: backend
         run: npm ci
 
+      - name: Ejecutar pruebas
+        working-directory: backend
+        run: npm test -- --runInBand
+
       - name: Compilar backend
+        working-directory: backend
         run: npm run build
