@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../estilos/Inventario.css";
 import Categorias from "../componentes/Categorias";
+import Productos from "../componentes/Productos";
 
 function Inventario() {
   const [seccionActiva, setSeccionActiva] = useState("productos");
@@ -28,14 +29,7 @@ function Inventario() {
       </div>
 
       <div className="inventario-contenido">
-        {seccionActiva === "productos" ? (
-          <div>
-            <h3>Gestión de productos</h3>
-            <p>Aquí podrás registrar y administrar los productos.</p>
-          </div>
-        ) : (
-          <Categorias />
-        )}
+        {seccionActiva === "productos" ? <Productos /> : <Categorias />}
       </div>
     </div>
   );

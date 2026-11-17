@@ -8,7 +8,7 @@ export async function crearProductos(datos: CrearProductoDTO){
         codigo: datos.codigo.trim(),
         id_categoria: datos.id_categoria,
         nombre: datos.nombre.trim(),
-        descripcion: datos.descripcion.trim(),
+        descripcion: datos.descripcion,
         precio: datos.precio,
         costo: datos.costo,
         existencia: datos.existencia,
