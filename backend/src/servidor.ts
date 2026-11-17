@@ -10,6 +10,9 @@ import "reflect-metadata";
 import crearCategoriaRuta from "./rutas/crear-categoria.ruta";
 import obtenercategoriasRuta from "./rutas/obtener-categoria.ruta";
 import eliminarcategoriaRuta from "./rutas/eliminar-categoria.ruta";
+import crearProductoRuta from "./rutas/crear-producto.ruta";
+import obtenerProductoRuta from "./rutas/obtener-producto.ruta";
+import eliminarProductoRuta from "./rutas/eliminar-producto.ruta";
 
 dotenv.config();
 
@@ -51,6 +54,12 @@ app.use("/api/categorias", crearCategoriaRuta);
 app.use("/api/categorias", obtenercategoriasRuta);
 app.use("/api/categorias", eliminarcategoriaRuta);
 
+//---------------------------------------------------------------
+//Productos
+//---------------------------------------------------------------
+app.use("/api/productos", crearProductoRuta);
+app.use("/api/productos", obtenerProductoRuta); 
+app.use("/api/productos", eliminarProductoRuta);
 
 // Iniciar servidor
 app.listen(PUERTO, () => {
