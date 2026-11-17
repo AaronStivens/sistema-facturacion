@@ -1,8 +1,7 @@
 import conexion from "../../../base-datos/conexion";
 import { IProductos } from "../../../base-datos/interfaces/productos.interface";
 
-export async function eliminarProducto(idProducto: number) {
-  console.log('idProducto: ', idProducto);
+export async function eliminarProducto(idProducto: number) {  
 
   if (idProducto === undefined || idProducto === null)    
     return { status: 400, message: "El id del producto es requerido" };
