@@ -10,6 +10,7 @@ import "reflect-metadata";
 import crearCategoriaRuta from "./rutas/crear-categoria.ruta";
 import obtenercategoriasRuta from "./rutas/obtener-categoria.ruta";
 import eliminarcategoriaRuta from "./rutas/eliminar-categoria.ruta";
+import crearProductoRuta from "./rutas/crear-producto.ruta";
 
 dotenv.config();
 
@@ -51,7 +52,11 @@ app.use("/api/categorias", crearCategoriaRuta);
 app.use("/api/categorias", obtenercategoriasRuta);
 app.use("/api/categorias", eliminarcategoriaRuta);
 
-
+//---------------------------------------------------------------
+//Productos
+//---------------------------------------------------------------
+app.use("/api/productos", crearProductoRuta);
+  
 // Iniciar servidor
 app.listen(PUERTO, () => {
   console.log(`Servidor ejecutándose en http://localhost:${PUERTO}/api/estado-bd`);
