@@ -5,6 +5,7 @@ import { validationMetadatasToSchemas } from "class-validator-jsonschema";
 // Importar los DTO para registrar sus decoradores
 import "../DTO/crear-categoria.dto";
 import "../DTO/crear-producto.dto";
+import "../DTO/crear-cliente.dto";
 
 // Generar esquemas automáticamente
 const esquemasDTO = validationMetadatasToSchemas({
