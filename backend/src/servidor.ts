@@ -13,6 +13,10 @@ import eliminarcategoriaRuta from "./rutas/eliminar-categoria.ruta";
 import crearProductoRuta from "./rutas/crear-producto.ruta";
 import obtenerProductoRuta from "./rutas/obtener-producto.ruta";
 import eliminarProductoRuta from "./rutas/eliminar-producto.ruta";
+import crearClienteRuta from "./rutas/crear-cliente.ruta";
+import obtenerClienteRuta from "./rutas/obtener-cliente.ruta";
+import eliminarClienteRuta from "./rutas/eliminar-cliente.ruta";
+import editarProductoRuta from "./rutas/editar-cliente.ruta";
 
 dotenv.config();
 
@@ -60,6 +64,14 @@ app.use("/api/categorias", eliminarcategoriaRuta);
 app.use("/api/productos", crearProductoRuta);
 app.use("/api/productos", obtenerProductoRuta); 
 app.use("/api/productos", eliminarProductoRuta);
+
+//---------------------------------------------------------------
+//Clientes
+//---------------------------------------------------------------
+app.use("/api/clientes", crearClienteRuta);
+app.use("/api/clientes", obtenerClienteRuta);
+app.use("/api/clientes", eliminarClienteRuta);
+app.use("/api/clientes", editarProductoRuta);
 
 // Iniciar servidor
 app.listen(PUERTO, () => {
