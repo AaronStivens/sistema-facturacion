@@ -8,14 +8,12 @@ export async function obtenerClientes(
 
   if (idCliente === undefined || idCliente === null) {
 
-    const ObtenerCliente = await conexion
-      .from<ICliente>("clientes")      
-      .first();
+    const ObtenerCliente = await conexion.from<ICliente>("clientes")            
 
-    return ObtenerCliente ?? null;
+    return ObtenerCliente ?? [];
   }
 
-  const ObtenerClientes = await conexion<ICliente>("clientes").where("id_cliente", idCliente).select("*");
+  const ObtenerClientes = await conexion<ICliente>("clientes").where("id_cliente", idCliente).select("*").first();
 
-  return ObtenerClientes;
+  return ObtenerClientes ?? null;
 }
