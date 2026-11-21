@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import MenuSuperior from "../componentes/MenuSuperior";
 import "../estilos/Inicio.css";
 import Inventario from "./Inventario";
+import Clientes from "../componentes/Clientes";
 
 function Inicio() {
   const [opcionActiva, setOpcionActiva] = useState("Clientes");
@@ -21,6 +21,8 @@ function Inicio() {
       <main className="contenido-principal">
         {opcionActiva === "Inventario" ? (
           <Inventario />
+        ) : opcionActiva === "Clientes" ? (
+          <Clientes />
         ) : (
           <>
             <h2>{opcionActiva}</h2>
