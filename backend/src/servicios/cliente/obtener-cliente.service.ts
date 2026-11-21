@@ -1,19 +1,15 @@
 import conexion from "../../../base-datos/conexion";
 import { ICliente } from "../../../base-datos/interfaces/clientes.interace";
 
-//Ejemplo para refactorizar
-export async function obtenerClientes(
-  idCliente?: number,
-): Promise<ICliente | ICliente[] | null> {
+export async function obtenerClientes(idCliente?: number): Promise<ICliente[]> {
+  
+  const consulta = conexion.from<ICliente>("clientes").select("*");
 
-  if (idCliente === undefined || idCliente === null) {
+  if (idCliente !== undefined) {
+    const cliente = await consulta.where("id_cliente", idCliente).first();
 
-    const ObtenerCliente = await conexion.from<ICliente>("clientes")            
-
-    return ObtenerCliente ?? [];
+    return cliente ? [cliente] : [];
   }
 
-  const ObtenerClientes = await conexion<ICliente>("clientes").where("id_cliente", idCliente).select("*").first();
-
-  return ObtenerClientes ?? null;
+  return await consulta;
 }
