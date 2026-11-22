@@ -17,6 +17,7 @@ import crearClienteRuta from "./rutas/crear-cliente.ruta";
 import obtenerClienteRuta from "./rutas/obtener-cliente.ruta";
 import eliminarClienteRuta from "./rutas/eliminar-cliente.ruta";
 import editarProductoRuta from "./rutas/editar-cliente.ruta";
+import obtenerFacturas from "./rutas/obtener-facturas.ruta"
 
 dotenv.config();
 
@@ -72,6 +73,11 @@ app.use("/api/clientes", crearClienteRuta);
 app.use("/api/clientes", obtenerClienteRuta);
 app.use("/api/clientes", eliminarClienteRuta);
 app.use("/api/clientes", editarProductoRuta);
+
+//---------------------------------------------------------------
+//Clientes
+//---------------------------------------------------------------
+app.use("/api/facturas",obtenerFacturas)
 
 // Iniciar servidor
 app.listen(PUERTO, () => {

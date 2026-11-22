@@ -10,4 +10,5 @@ impuesto: number
 total: number
 metodo_pago: string
 estado: string
+cliente_json:string
 }
