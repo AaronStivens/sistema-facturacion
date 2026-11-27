@@ -3,6 +3,7 @@ import MenuSuperior from "../componentes/MenuSuperior";
 import "../estilos/Inicio.css";
 import Inventario from "./Inventario";
 import Clientes from "../componentes/Clientes";
+import Facturas from "../componentes/facturas";
 
 function Inicio() {
   const [opcionActiva, setOpcionActiva] = useState("Clientes");
@@ -23,6 +24,8 @@ function Inicio() {
           <Inventario />
         ) : opcionActiva === "Clientes" ? (
           <Clientes />
+        ) : opcionActiva === "Facturas" ? (
+          <Facturas />
         ) : (
           <>
             <h2>{opcionActiva}</h2>
