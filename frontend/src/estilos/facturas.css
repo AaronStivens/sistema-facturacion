@@ -1,0 +1,343 @@
+.facturas {
+    width: 100%;
+}
+
+.facturas-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.facturas-encabezado h3 {
+    margin: 0;
+    font-size: 21px;
+    color: #1e293b;
+}
+
+.facturas-encabezado p {
+    margin: 7px 0 0;
+    color: #64748b;
+}
+
+.btn-agregar-factura {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-agregar-factura:hover {
+    background: #1d4ed8;
+}
+
+/* Búsqueda */
+.facturas-filtros {
+    margin-bottom: 18px;
+}
+
+.facturas-filtros input {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #334155;
+}
+
+.facturas-filtros input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* Tabla */
+.facturas-tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.facturas-tabla {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    background: white;
+}
+
+.facturas-tabla th,
+.facturas-tabla td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.facturas-tabla th {
+    color: #64748b;
+    background: #f8fafc;
+    font-weight: 600;
+}
+
+.facturas-vacias {
+    text-align: center !important;
+    color: #94a3b8;
+    padding: 30px !important;
+}
+
+.factura-numero {
+    font-weight: 600;
+    color: #334155;
+}
+
+.factura-total {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Estado */
+.factura-estado {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.factura-estado.completada {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.factura-estado.anulada {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Acciones */
+.facturas-acciones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-eliminar-factura {
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.btn-eliminar-factura:hover {
+    background: #fef2f2;
+}
+
+/* Notificaciones */
+.factura-notificacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.factura-notificacion.exito {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.factura-notificacion.error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.factura-notificacion-icono {
+    font-weight: bold;
+}
+
+.factura-notificacion-cerrar {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Modales */
+.factura-modal-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.factura-modal-contenido {
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.factura-modal-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.factura-modal-encabezado h3,
+.factura-modal-confirmacion h3 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 19px;
+}
+
+.factura-modal-cerrar {
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.factura-modal-mensaje {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.factura-modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-factura-cancelar,
+.btn-factura-confirmar-eliminar {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-factura-cancelar {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+}
+
+.btn-factura-cancelar:hover {
+    background: #f8fafc;
+}
+
+.btn-factura-confirmar-eliminar {
+    background: #dc2626;
+    border: 1px solid #dc2626;
+    color: white;
+}
+
+.btn-factura-confirmar-eliminar:hover {
+    background: #b91c1c;
+}
+
+.btn-factura-cancelar:disabled,
+.btn-factura-confirmar-eliminar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Confirmación */
+.factura-modal-confirmacion {
+    max-width: 420px;
+    text-align: center;
+}
+
+.factura-modal-confirmacion p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.factura-modal-icono-eliminar {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #dc2626;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.factura-modal-confirmacion .factura-modal-acciones {
+    justify-content: center;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    .facturas-encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-agregar-factura {
+        width: 100%;
+    }
+
+    .facturas-filtros input {
+        max-width: none;
+    }
+
+    .factura-modal-contenido {
+        padding: 20px;
+    }
+}
+.btn-eliminar-factura:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f1f5f9;
+    color: #94a3b8;
+    border-color: #e2e8f0;
+}
+
+.btn-ver-pdf {
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #bfdbfe;
+    color: #2563eb;
+    font-size: 14px;
+}
+
+.btn-ver-pdf:hover {
+    background: #eff6ff;
+}

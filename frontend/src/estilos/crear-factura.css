@@ -1,0 +1,253 @@
+.modal-nueva-factura {
+    max-width: 950px;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+.modal-nueva-factura .factura-modal-encabezado {
+    align-items: flex-start;
+}
+
+.factura-modal-encabezado p {
+    margin: 7px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.nueva-factura-seccion {
+    margin-bottom: 25px;
+}
+
+.nueva-factura-seccion h4 {
+    margin: 0 0 15px;
+    color: #1e293b;
+    font-size: 16px;
+}
+
+/* Campos */
+.nueva-factura-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.nueva-factura-campo label {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nueva-factura-campo input,
+.nueva-factura-campo select,
+.nueva-factura-agregar-producto select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+    color: #334155;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.nueva-factura-campo input:focus,
+.nueva-factura-campo select:focus,
+.nueva-factura-agregar-producto select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* Agregar productos */
+.nueva-factura-agregar-producto {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-factura-agregar-producto {
+    flex-shrink: 0;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-factura-agregar-producto:hover {
+    background: #1d4ed8;
+}
+
+/* Tabla de productos */
+.nueva-factura-tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.nueva-factura-tabla {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    background: white;
+}
+
+.nueva-factura-tabla th,
+.nueva-factura-tabla td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+.nueva-factura-tabla th {
+    background: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.nueva-factura-vacio {
+    padding: 25px !important;
+    color: #94a3b8;
+    text-align: center !important;
+}
+
+.nueva-factura-cantidad {
+    width: 75px;
+    box-sizing: border-box;
+    padding: 7px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    color: #334155;
+}
+
+.btn-factura-quitar {
+    width: 29px;
+    height: 29px;
+    border: 1px solid #fecaca;
+    border-radius: 5px;
+    background: white;
+    color: #dc2626;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-factura-quitar:hover {
+    background: #fef2f2;
+}
+
+/* Configuración de pago */
+.nueva-factura-configuracion {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+/* Resumen */
+.nueva-factura-resumen {
+    max-width: 380px;
+    margin: 25px 0 0 auto;
+    padding: 17px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.nueva-factura-resumen div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 12px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.nueva-factura-resumen strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+.nueva-factura-resumen .nueva-factura-total {
+    margin: 0;
+    padding-top: 13px;
+    border-top: 1px solid #cbd5e1;
+    color: #1e293b;
+    font-size: 16px;
+}
+
+.nueva-factura-total strong {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+/* Mensajes y carga */
+.nueva-factura-mensaje {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 7px;
+    background: #fef2f2;
+    color: #991b1b;
+    font-size: 14px;
+}
+
+.nueva-factura-mensaje button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nueva-factura-cargando {
+    padding: 35px;
+    color: #64748b;
+    text-align: center;
+}
+
+/* Botón guardar */
+.btn-factura-guardar {
+    padding: 10px 16px;
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-factura-guardar:hover {
+    background: #1d4ed8;
+}
+
+.btn-factura-guardar:disabled,
+.btn-factura-agregar-producto:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 650px) {
+    .nueva-factura-configuracion {
+        grid-template-columns: 1fr;
+    }
+
+    .nueva-factura-agregar-producto {
+        flex-direction: column;
+    }
+
+    .btn-factura-agregar-producto {
+        width: 100%;
+    }
+
+    .modal-nueva-factura {
+        padding: 18px;
+    }
+}
