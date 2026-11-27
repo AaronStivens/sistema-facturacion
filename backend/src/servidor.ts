@@ -17,6 +17,9 @@ import crearClienteRuta from "./rutas/crear-cliente.ruta";
 import obtenerClienteRuta from "./rutas/obtener-cliente.ruta";
 import eliminarClienteRuta from "./rutas/eliminar-cliente.ruta";
 import editarProductoRuta from "./rutas/editar-cliente.ruta";
+import obtenerFacturas from "./rutas/obtener-facturas.ruta";
+import crearFactura from "./rutas/crear-factura.ruta";
+import anularFactura from "./rutas/eliminar-factura.ruta"
 
 dotenv.config();
 
@@ -62,7 +65,7 @@ app.use("/api/categorias", eliminarcategoriaRuta);
 //Productos
 //---------------------------------------------------------------
 app.use("/api/productos", crearProductoRuta);
-app.use("/api/productos", obtenerProductoRuta); 
+app.use("/api/productos", obtenerProductoRuta);
 app.use("/api/productos", eliminarProductoRuta);
 
 //---------------------------------------------------------------
@@ -73,7 +76,17 @@ app.use("/api/clientes", obtenerClienteRuta);
 app.use("/api/clientes", eliminarClienteRuta);
 app.use("/api/clientes", editarProductoRuta);
 
+//---------------------------------------------------------------
+//Facturas
+//---------------------------------------------------------------
+app.use("/api/facturas", obtenerFacturas);
+app.use("/api/facturas", crearFactura);
+app.use("/api/facturas", anularFactura)
+
+
 // Iniciar servidor
 app.listen(PUERTO, () => {
-  console.log(`Servidor ejecutándose en http://localhost:${PUERTO}/api/estado-bd`);
+  console.log(
+    `Servidor ejecutándose en http://localhost:${PUERTO}/api/estado-bd`,
+  );
 });
