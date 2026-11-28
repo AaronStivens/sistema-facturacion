@@ -20,6 +20,7 @@ import editarProductoRuta from "./rutas/editar-cliente.ruta";
 import obtenerFacturas from "./rutas/obtener-facturas.ruta";
 import crearFactura from "./rutas/crear-factura.ruta";
 import anularFactura from "./rutas/eliminar-factura.ruta"
+import generarFacturaPDF from "./rutas/generar-facturapdf.ruta"
 
 dotenv.config();
 
@@ -82,7 +83,7 @@ app.use("/api/clientes", editarProductoRuta);
 app.use("/api/facturas", obtenerFacturas);
 app.use("/api/facturas", crearFactura);
 app.use("/api/facturas", anularFactura)
-
+app.use("/api/facturas", generarFacturaPDF)
 
 // Iniciar servidor
 app.listen(PUERTO, () => {
