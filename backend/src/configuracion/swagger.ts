@@ -8,6 +8,7 @@ import "../DTO/crear-producto.dto";
 import "../DTO/crear-cliente.dto";
 import "../DTO/editar-cliente.dto";
 import "../DTO/crear-factura.dto"
+import "../DTO/obtener-facturas.dto.ts"
 
 // Generar esquemas automáticamente
 const esquemasDTO = validationMetadatasToSchemas({

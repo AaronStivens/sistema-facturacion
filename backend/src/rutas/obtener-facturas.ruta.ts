@@ -7,19 +7,17 @@ const router = Router();
 /**
  * @swagger
  * /api/facturas/obtener:
- *   get:
+ *   post:
  *     summary: Obtener facturas
- *     description: Recupera la lista de facturas o un facturas específica.
+ *     description: Recupera la lista de facturas o una factura específica.
  *     tags:
  *       - Facturas
- *     parameters:
- *       - in: query
- *         name: idFactura
- *         required: false
- *         description: ID de la factura que se desea consultar. Si se omite, devuelve todos las facturas.
- *         schema:
- *           type: integer
- *           example: 5
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ObtenerFacturasDTO'
  *     responses:
  *       200:
  *         description: Facturas obtenidas correctamente.
@@ -32,6 +30,6 @@ const router = Router();
  */
 
 
-router.get("/obtener", obtenerFacturasController);
+router.post("/obtener", obtenerFacturasController);
 
 export default router;

@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
 import { obtenerFacturas } from "../../servicios/facturas/obtener-facturas.service";
+import { ObtenerFacturasDTO } from "../../DTO/obtener-facturas.dto";
 
 export async function obtenerFacturasController(
-    req:Request <{}, {}, {idFactura:number}>,
+    req:Request <ObtenerFacturasDTO>,
     res:Response
 ){
     try {
-        const Facturas = await obtenerFacturas(req.query.idFactura ? Number(req.query.idFactura): undefined)
+        const Facturas = await obtenerFacturas(req.body)
 
         res.status(200).json({
             mensaje: "Facturas obtenidas correctamente",
